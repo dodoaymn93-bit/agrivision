@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AgriVision</title>
+    <meta charset="UTF-8">
+    <title>AgriVision - Farming Simulator</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
-    <h1>AgriVision</h1>
-    <p>Select your farm location and manage it using NASA data!</p>
+    <header>
+        <h1>🌱 AgriVision: Sustainable Farming Simulator</h1>
+    </header>
 
-    <div id="map" style="height: 500px;"></div>
-    <div id="controls">
-        <button onclick="fertilize()">Fertilize</button>
-        <button onclick="irrigate()">Irrigate</button>
-        <button onclick="checkData()">Check NASA Data</button>
+    <div id="game">
+        <div id="farm-selection">
+            <h2>Select Your Farm</h2>
+            <select id="farm-select">
+                <option value="31.51,9.7">Essaouira, Morocco</option>
+                <option value="40.71,-74.01">New York, USA</option>
+                <option value="48.85,2.35">Paris, France</option>
+            </select>
+            <button id="select-farm">Start Farming</button>
+        </div>
+
+        <div id="dashboard" style="display:none;">
+            <h2>Farm Dashboard</h2>
+            <p id="location"></p>
+            <p id="precipitation">Average Precipitation: -- mm/day</p>
+            <p id="temperature">Average Temperature: -- °C</p>
+
+            <div id="actions">
+                <button onclick="fertilize()">🌱 Fertilize</button>
+                <button onclick="irrigate()">💧 Irrigate</button>
+                <button onclick="manageLivestock()">🐄 Manage Livestock</button>
+            </div>
+
+            <div id="animation"></div>
+            <div id="log"></div>
+        </div>
     </div>
-    <div id="output"></div>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
