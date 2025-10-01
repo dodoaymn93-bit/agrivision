@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>AgriVision - Farming Simulator</title>
+    <title>Agrivision Farming Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🌱 AgriVision: Sustainable Farming Simulator</h1>
-    </header>
+    <h1>🌱 Agrivision Farming Simulator</h1>
 
-    <div id="game">
-        <div id="farm-selection">
-            <h2>Select Your Farm</h2>
-            <select id="farm-select">
-                <option value="31.51,9.7">Essaouira, Morocco</option>
-                <option value="40.71,-74.01">New York, USA</option>
-                <option value="48.85,2.35">Paris, France</option>
-            </select>
-            <button id="select-farm">Start Farming</button>
+    <div id="game-container">
+        <div id="map-container">
+            <img id="farmMap" src="" alt="Farm Satellite Map">
         </div>
 
-        <div id="dashboard" style="display:none;">
-            <h2>Farm Dashboard</h2>
-            <p id="location"></p>
-            <p id="precipitation">Average Precipitation: -- mm/day</p>
-            <p id="temperature">Average Temperature: -- °C</p>
+        <div id="controls">
+            <label for="farmSelect">Choose a farm:</label>
+            <select id="farmSelect">
+                <option value="33.21,-5.30">Farm 1 (33.21, -5.30)</option>
+                <option value="40.71,-74.00">Farm 2 (New York)</option>
+                <option value="48.85,2.35">Farm 3 (Paris)</option>
+            </select>
+            <button id="fertilizeBtn">🌱 Fertilize</button>
+            <button id="irrigateBtn">💧 Irrigate</button>
+            <button id="updateBtn">📊 Update NASA Data</button>
+        </div>
 
-            <div id="actions">
-                <button onclick="fertilize()">🌱 Fertilize</button>
-                <button onclick="irrigate()">💧 Irrigate</button>
-                <button onclick="manageLivestock()">🐄 Manage Livestock</button>
-            </div>
+        <div id="status">
+            <p id="message">Select a farm and click "Update NASA Data"!</p>
+            <p id="data"></p>
+        </div>
 
-            <div id="animation"></div>
-            <div id="log"></div>
+        <div id="animation">
+            <div id="crop"></div>
         </div>
     </div>
 
