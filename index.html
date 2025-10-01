@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Agrivision Farming Game</title>
+    <meta charset="UTF-8">
+    <title>AgriVision Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>🌱 Agrivision Farming Simulator</h1>
+    <h1>🌾 AgriVision Farming Game</h1>
+    <p>Select a farm location:</p>
 
-    <div id="game-container">
-        <div id="map-container">
-            <img id="farmMap" src="" alt="Farm Satellite Map">
-        </div>
+    <button onclick="chooseFarm(33.21, -5.30)">Farm A (Morocco)</button>
+    <button onclick="chooseFarm(40.71, -74.00)">Farm B (USA)</button>
+    <button onclick="chooseFarm(-23.55, -46.63)">Farm C (Brazil)</button>
 
-        <div id="controls">
-            <label for="farmSelect">Choose a farm:</label>
-            <select id="farmSelect">
-                <option value="33.21,-5.30">Farm 1 (33.21, -5.30)</option>
-                <option value="40.71,-74.00">Farm 2 (New York)</option>
-                <option value="48.85,2.35">Farm 3 (Paris)</option>
-            </select>
-            <button id="fertilizeBtn">🌱 Fertilize</button>
-            <button id="irrigateBtn">💧 Irrigate</button>
-            <button id="updateBtn">📊 Update NASA Data</button>
-        </div>
-
-        <div id="status">
-            <p id="message">Select a farm and click "Update NASA Data"!</p>
-            <p id="data"></p>
-        </div>
-
-        <div id="animation">
-            <div id="crop"></div>
-        </div>
+    <div id="farmStatus">
+        <h2>Farm Status</h2>
+        <p id="location"></p>
+        <p id="fertilize"></p>
+        <p id="irrigate"></p>
+        <p>📊 NASA Data:</p>
+        <p>Average Precipitation: <span id="precipitation">Loading...</span></p>
+        <p>Average Temperature: <span id="temperature">Loading...</span></p>
+        <p>NDVI: <span id="ndvi">Loading...</span></p>
+        <p>Soil Moisture: <span id="soilMoisture">Loading...</span></p>
     </div>
+
+    <img id="farmImage" src="farm.png" alt="Farm" class="farm-image">
 
     <script src="script.js"></script>
 </body>
